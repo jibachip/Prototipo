@@ -19,19 +19,30 @@
         android:layout_marginTop="20dp"
         />
     <EditText
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tvDatEst"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:hint="Nombre"
         android:id="@+id/etNombreEst"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="32dp"
+        android:layout_margin="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="RFC"
+        android:id="@+id/etRFC"
+        app:layout_constraintTop_toBottomOf="@id/etNombreEst"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Horario"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreEst"
+        app:layout_constraintTop_toBottomOf="@+id/etRFC"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="10dp"
         android:id="@+id/tvHora"
