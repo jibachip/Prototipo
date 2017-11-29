@@ -17,7 +17,6 @@ public class InfoPersonal extends AppCompatActivity {
         final RadioButton dueño=findViewById(R.id.rbDueño);
         Button siguiente=findViewById(R.id.btnSigRegis);
 
-
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
