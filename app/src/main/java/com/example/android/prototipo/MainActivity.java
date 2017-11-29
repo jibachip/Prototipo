@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //UN COMENTARIO PARA PRUEBA
-        //Button registrarse=(Button)findViewById(R.id.btnRegistro);
-        Button registrarse=findViewById(R.id.btnRegistro);
+        Button registrarse=(Button)findViewById(R.id.btnRegistro);
+        //Button registrarse=findViewById(R.id.btnRegistro);
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
