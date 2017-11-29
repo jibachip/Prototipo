@@ -18,6 +18,7 @@ public class InfoPersonal extends AppCompatActivity {
 
         Button siguiente=findViewById(R.id.btnSigRegis);
 
+
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
