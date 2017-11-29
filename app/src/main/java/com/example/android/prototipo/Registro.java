@@ -16,6 +16,7 @@ public class Registro extends AppCompatActivity {
 
         //Button siguiente=(Button)findViewById(R.id.btnRegistDueño);
         //PRUEBA DE CAMBIOS
+        //X2
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
