@@ -18,8 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button registrarse=(Button)findViewById(R.id.btnRegistro);
 
+        //UN COMENTARIO PARA PRUEBA
+        //Button registrarse=(Button)findViewById(R.id.btnRegistro);
+        Button registrarse=findViewById(R.id.btnRegistro);
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
