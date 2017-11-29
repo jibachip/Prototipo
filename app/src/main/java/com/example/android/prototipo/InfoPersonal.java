@@ -15,7 +15,6 @@ public class InfoPersonal extends AppCompatActivity {
         setContentView(R.layout.activity_info_personal);
         final RadioButton cliente=findViewById(R.id.rbCliente);
         final RadioButton dueño=findViewById(R.id.rbDueño);
-
         Button siguiente=findViewById(R.id.btnSigRegis);
 
 
