@@ -8,55 +8,56 @@
     android:background="@drawable/fondo1">
 
     <TextView
+        android:id="@+id/tvDatEst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvDatEst"
-        android:text="Datos Estaconamiento"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="20dp"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvDatEst"
+        android:text="@string/estatitulo"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:hint="Nombre"
-        android:id="@+id/etNombreEst"
-        android:layout_marginTop="32dp"
-        android:layout_margin="8dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
+        android:id="@+id/etNombreEst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="RFC"
+        android:layout_margin="8dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/estanombre"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDatEst" />
+
+    <EditText
         android:id="@+id/etRFC"
-        app:layout_constraintTop_toBottomOf="@id/etNombreEst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="@string/estarfc"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="8dp"/>
+        app:layout_constraintTop_toBottomOf="@id/etNombreEst" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Horario"
-        app:layout_constraintTop_toBottomOf="@+id/etRFC"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="10dp"
         android:id="@+id/tvHora"
-        app:layout_constraintRight_toRightOf="parent" />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="De"
+        android:layout_marginTop="10dp"
+        android:text="@string/estahorario"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRFC" />
+
+    <TextView
         android:id="@+id/de"
-        app:layout_constraintTop_toBottomOf="@+id/tvHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@string/estade"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/spHoraInic"
-        android:layout_marginTop="23dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvHora" />
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,15 +68,14 @@
         android:layout_marginTop="10dp" />
 
     <TextView
+        android:id="@+id/a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A"
-        android:id="@+id/a"
-        app:layout_constraintTop_toBottomOf="@+id/spHoraInic"
+        android:layout_marginTop="23dp"
+        android:text="@string/estaa"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/spHoraInic"
-        android:layout_marginTop="23dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/spHoraInic" />
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,49 +86,52 @@
         android:layout_marginTop="10dp"
         android:animateLayoutChanges="true"
         />
+
     <EditText
+        android:id="@+id/etEspacios"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/spHoraCierre"
-        android:hint="Espacios"
+        android:layout_marginTop="20dp"
+        android:hint="@string/estaespacios"
         android:inputType="number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="20dp"
-        android:id="@+id/etEspacios" />
+        app:layout_constraintTop_toBottomOf="@+id/spHoraCierre" />
+
     <EditText
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
         android:id="@+id/etPrecioHora"
-        android:hint="Precio por hora"
-        android:drawableLeft="@drawable/ic_attach_money_black_24dp"
-        app:layout_constraintTop_toBottomOf="@id/etEspacios"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="10dp"/>
-    <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/etPrecioFracc"
-        android:hint="Precio por fraccion"
+        android:layout_marginTop="10dp"
         android:drawableLeft="@drawable/ic_attach_money_black_24dp"
-        app:layout_constraintTop_toBottomOf="@id/etPrecioHora"
+        android:hint="@string/estaprecioH"
+        android:inputType="numberDecimal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEspacios" />
+
+    <EditText
+        android:id="@+id/etPrecioFracc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+        android:hint="@string/estaprecioF"
         android:inputType="numberDecimal"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPrecioHora" />
+
     <Button
+        android:id="@+id/btnDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Direccion"
-        android:id="@+id/btnDireccion"
-        app:layout_constraintTop_toBottomOf="@id/etPrecioFracc"
+        android:drawablePadding="4dp"
+        android:drawableStart="@drawable/ic_my_location_black_24dp"
+        android:text="@string/estadireccion"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:drawableStart="@drawable/ic_my_location_black_24dp"
-        android:drawablePadding="4dp"/>
+        app:layout_constraintTop_toBottomOf="@id/etPrecioFracc" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

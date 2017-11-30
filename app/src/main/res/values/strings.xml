@@ -20,6 +20,18 @@
         <item>11 P.M.</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
+    <string name="estanombre">Nombre</string>
+    <string name="estarfc">RFC</string>
+    <string name="estatitulo">Datos Estacionamiento</string>
+    <string name="estahorario">Horario</string>
+    <string name="estade">De</string>
+    <string name="estaa">A</string>
+    <string name="estaespacios">Espacios</string>
+    <string name="estaprecioH">Precio por hora</string>
+    <string name="estaprecioF">Precio por fracción</string>
+    <string name="estadireccion">Direccion</string>
+    <string name="estaregistrar">Registrar</string>
+    <string name="perreg">Registro</string>
 
     <string-array name="Genero">
         <item>Masculino</item>
