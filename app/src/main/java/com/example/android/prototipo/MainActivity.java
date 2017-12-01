@@ -23,10 +23,19 @@ public class MainActivity extends AppCompatActivity {
         //COMENTARIO MAS
         Button registrarse=(Button)findViewById(R.id.btnRegistro);
         //Button registrarse=findViewById(R.id.btnRegistro);
+        Button button=findViewById(R.id.btnIniciar);
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), Registro.class);
+               // Intent intent= new Intent(getApplicationContext(), Registro.class);
+                //startActivity(intent);
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),RegistroTab.class);
                 startActivity(intent);
             }
         });

@@ -32,7 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        final ImageView info = findViewById(R.id.abInfo);
+
 
 
         fab.setOnClickListener(new View.OnClickListener() {
