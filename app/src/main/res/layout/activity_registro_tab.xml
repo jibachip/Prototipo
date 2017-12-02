@@ -316,15 +316,134 @@
                         android:alpha=".8"
                         android:background="#4caf50"
                         android:text="Registrar"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/etMatricula"
-                        app:layout_constraintVertical_bias="1.0" />
+                        app:layout_constraintVertical_bias="1.0"
+                        />
                 </android.support.constraint.ConstraintLayout>
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/tab4">
+                    <EditText
+                        android:id="@+id/etNombreEst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_marginTop="32dp"
+                        android:hint="Nombre del estacionamiento"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDatEst" />
+
+                    <EditText
+                        android:id="@+id/etRFC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:hint="RFC"
+                        app:layout_constraintRight_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etNombreEst" />
+
+                    <TextView
+                        android:id="@+id/tvHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Horario"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etRFC" />
+
+                    <TextView
+                        android:id="@+id/de"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="De"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintRight_toLeftOf="@+id/spHoraInic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvHora" />
+
+                    <Spinner
+                        android:id="@+id/spHoraInic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintLeft_toRightOf="@+id/de"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvHora" />
+
+                    <TextView
+                        android:id="@+id/a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="A"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toRightOf="@id/spHoraInic"
+                        app:layout_constraintRight_toLeftOf="@id/spHoraCierre"
+                        app:layout_constraintTop_toBottomOf="@+id/tvHora" />
+
+                    <Spinner
+                        android:id="@+id/spHoraCierre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:animateLayoutChanges="true"
+                        app:layout_constraintLeft_toRightOf="@+id/a"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvHora" />
+
+                    <TextView
+                        android:id="@+id/tvPrecio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/spHoraCierre"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/etPrecioHora"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                        android:hint="Precio por hora"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPrecio" />
+
+                    <EditText
+                        android:id="@+id/etPrecioFracc"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                        android:hint="Precio por fraccion"
+                        android:inputType="numberDecimal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etPrecioHora" />
+
+                    <Button
+                        android:id="@+id/btnsigEst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                        android:text="Siguiente"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/etPrecioFracc" />
 
                 </android.support.constraint.ConstraintLayout>
 
