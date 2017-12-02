@@ -23,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registro" />
         <activity android:name=".registro_dueno" />
         <activity android:name=".Datos_estacionamiento" />
         <!--
@@ -41,7 +40,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".InfoPersonal"></activity>
+        <activity android:name=".RegistroTab"></activity>
     </application>
 
 </manifest>

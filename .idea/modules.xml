@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Estacionamiento.iml" filepath="$PROJECT_DIR$/Estacionamiento.iml" />
-      <module fileurl="file://C:\Users\josed\Desktop\Semestre\Implementacion\Proyectofinal\Wip\Prototipo\Prototipo.iml" filepath="C:\Users\josed\Desktop\Semestre\Implementacion\Proyectofinal\Wip\Prototipo\Prototipo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prototipo.iml" filepath="$PROJECT_DIR$/Prototipo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\josed\Desktop\Semestre\Implementacion\Proyectofinal\Wip\Prototipo\app\app.iml" filepath="C:\Users\josed\Desktop\Semestre\Implementacion\Proyectofinal\Wip\Prototipo\app\app.iml" />
     </modules>
   </component>
 </project>
