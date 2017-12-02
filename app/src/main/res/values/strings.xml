@@ -40,4 +40,9 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="regCorreo">Correo</string>
+    <string name="regus">Usuario</string>
+    <string name="regcon">Contraseña</string>
+    <string name="regconf">Confirmar Contraseña</string>
+    <string name="regS">Siguiente</string>
 </resources>

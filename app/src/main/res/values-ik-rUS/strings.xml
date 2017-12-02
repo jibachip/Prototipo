@@ -3,5 +3,11 @@
     <string name="app_name">Prototipo</string>
     <string name="estanombre">Name</string>
     <string name="estarfc">ID Number</string>
-    <string name="perreg">Registro</string>
+    <string name="estadireccion">address</string>
+    <string name="estaprecioH">"hourly rate "</string>
+    <string name="regCorreo">E-mail</string>
+    <string name="regcon">Password</string>
+    <string name="regconf">Confirm Password</string>
+    <string name="regS">Next</string>
+    <string name="regus">User</string>
 </resources>
