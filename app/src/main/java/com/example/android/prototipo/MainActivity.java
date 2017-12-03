@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Intent intent= new Intent(getApplicationContext(), Registro.class);
-                //startActivity(intent);
+                Intent intent= new Intent(getApplicationContext(), RegistroTab.class);
+                startActivity(intent);
             }
         });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),RegistroTab.class);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
         });
