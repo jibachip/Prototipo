@@ -1,18 +1,14 @@
 package com.example.android.prototipo;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.Toast;
 
 public class RegistroTab extends AppCompatActivity {
@@ -29,7 +25,7 @@ public class RegistroTab extends AppCompatActivity {
 
        correo=findViewById(R.id.etCorreo);
        usuario=findViewById(R.id.etUsuario);
-       contraseña=findViewById(R.id.etContraseña);
+       contraseña=findViewById(R.id.etContrasena);
        confcontraseña=findViewById(R.id.etConfContra);
        nombre=findViewById(R.id.etNombre);
        apPat=findViewById(R.id.etApPat);
@@ -47,22 +43,22 @@ public class RegistroTab extends AppCompatActivity {
     final Button btntab3=findViewById(R.id.p2p3);
     final Button btnRegisCliente=findViewById(R.id.btnRegCliente);
 
-    //Creacion tabhost
-       tabHost=findViewById(R.id.tabhost);
+        //Creacion tabhost
+        tabHost=findViewById(R.id.tabhost);
         tabHost.setup();
-//Agrega la primera pestaña al TabHost
+        //Agrega la primera pestaña al TabHost
         TabHost.TabSpec spec=tabHost.newTabSpec("Tab One");
         spec.setContent(R.id.tab1);
         spec.setIndicator("Usuario");
         tabHost.addTab(spec);
 
-//Agrega segunda pestaña
+        //Agrega segunda pestaña
         spec=tabHost.newTabSpec("Tab Two");
         spec.setContent(R.id.tab2);
         spec.setIndicator("Información Personal");
         tabHost.addTab(spec);
 
-//Agrega tercera pestaña.
+        //Agrega tercera pestaña.
         spec=tabHost.newTabSpec("Tab Three");
         spec.setContent(R.id.tab3);
         spec.setIndicator("Cliente");
