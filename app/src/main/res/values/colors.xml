@@ -2,13 +2,16 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#e1cc16</color>
+    <color name="colorAccent">#df000f4d</color>
     <color name="Gris">#ffffff</color>
     <color name="Gris2">#9ebdbdbd</color>
     <color name="negro">#000000</color>
     <color name="amarillo">#FF4081</color>
-    <color name="colorPrimario">#ffa007</color>
+    <color name="colorPrimario">#607d8b</color>
     <color name="colorPrimarioOscuro">#0881e2</color>
     <color name="rojo">#a6fe1a0e</color>
-    <color name="fondoAmarillo">#d0fff692</color>
+    <color name="fondoAmarillo">#b7fff177</color>
+    <color name="primary_material_dark">#607d8b</color>
+    <color name="blanco_transparente">#80ffffff</color>
+    <color name="fondoPrimario">#ffffff</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.android.prototipo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +26,7 @@ public class RegistroTab extends AppCompatActivity {
 
        correo=findViewById(R.id.etCorreo);
        usuario=findViewById(R.id.etUsuario);
-       contraseña=findViewById(R.id.etContrasena);
+       contraseña=findViewById(R.id.etContraseña);
        confcontraseña=findViewById(R.id.etConfContra);
        nombre=findViewById(R.id.etNombre);
        apPat=findViewById(R.id.etApPat);

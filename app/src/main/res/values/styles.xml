@@ -1,17 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="WipTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/fondoPrimario</item>
         <item name="colorPrimary">@color/colorPrimario</item>
-        <item name="colorPrimaryDark">@color/colorPrimario</item>
-        <item name="colorAccent">@color/rojo</item>
-        <item name="android:colorBackground">@color/rojo</item>
-        <item name="android:navigationBarColor">@color/rojo</item>
-        <item name="android:colorForeground">@color/negro</item>
-        <item name="android:textColorSecondaryInverse">@color/colorPrimario</item>
-        <item name="android:textColorPrimary">@color/negro</item>
-        <item name="android:textColorSecondary">@color/rojo</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -20,11 +13,13 @@
         <item name="colorAccent">@color/amarillo</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar" tools:targetApi="M">@color/negro</item>
-        <item name="android:iconTint">@color/negro</item>
+       <!-- <item name="android:iconTint">@color/negro</item>-->
     </style>
 
     <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.AppNoActionBar.NoActionBar" parent="Theme.AppCompat.NoActionBar" />
 
 </resources>
