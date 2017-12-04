@@ -61,4 +61,8 @@
     <string name="mainc">Contraseña</string>
     <string name="mainis">Iniciar Sesión</string>
     <string name="mainre">Registrarse</string>
+    <string name="regcu">Usuario</string>
+    <string name="regcp">Contraseña</string>
+    <string name="regcc">Confirmar contraseña</string>
+    <string name="regcce">Correo electronico</string>
 </resources>

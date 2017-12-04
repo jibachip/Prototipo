@@ -24,4 +24,8 @@
     <string name="mainc">Password</string>
     <string name="mainis">Login</string>
     <string name="mainre">Sign up</string>
+    <string name="regcu">User</string>
+    <string name="regcp">Password</string>
+    <string name="regcc">Confirm password</string>
+    <string name="regcce">E-mail</string>
 </resources>
