@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Prototipo</string>
     <string name="estanombre">Name</string>
-    <string name="estarfc">ID Number</string>
+    <string name="estarfc">ID number</string>
     <string name="estadireccion">address</string>
     <string name="estaprecioH">"hourly rate "</string>
     <string name="regCorreo">E-mail</string>
@@ -10,4 +10,18 @@
     <string name="regconf">Confirm Password</string>
     <string name="regS">Next</string>
     <string name="regus">User</string>
+    <string name="estaf">Rate by fraccion</string>
+    <string name="estaespacios">Parking spaces</string>
+    <string name="estadire">Address</string>
+    <string name="estahorario">Schedule</string>
+    <string name="estade">From</string>
+    <string name="estaa">To</string>
+    <string name="estatitulo">"Parking Data "</string>
+    <string name="estadatos">Parking Data</string>
+    <string name="estah">Hourly rate</string>
+    <string name="estafr">"Rate by fraction "</string>
+    <string name="mainus">User</string>
+    <string name="mainc">Password</string>
+    <string name="mainis">Login</string>
+    <string name="mainre">Sign up</string>
 </resources>

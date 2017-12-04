@@ -19,7 +19,7 @@
         <item>10 P.M.</item>
         <item>11 P.M.</item>
     </string-array>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps" translatable="false">Map</string>
     <string name="estanombre">Nombre</string>
     <string name="estarfc">RFC</string>
     <string name="estatitulo">Datos Estacionamiento</string>
@@ -28,21 +28,37 @@
     <string name="estaa">A</string>
     <string name="estaespacios">Espacios</string>
     <string name="estaprecioH">Precio por hora</string>
-    <string name="estaprecioF">Precio por fracción</string>
+    <string name="estaprecioF" translatable="false">Precio por fracción</string>
     <string name="estadireccion">Direccion</string>
-    <string name="estaregistrar">Registrar</string>
-    <string name="perreg">Registro</string>
+    <string name="estaregistrar" translatable="false">Registrar</string>
+    <string name="perreg" translatable="false">Registro</string>
 
     <string-array name="Genero">
         <item>Masculino</item>
         <item>Femenino</item>
     </string-array>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_main2" translatable="false">Main2Activity</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="section_format" translatable="false">Hello World from section: %1$d</string>
     <string name="regCorreo">Correo</string>
     <string name="regus">Usuario</string>
     <string name="regcon">Contraseña</string>
     <string name="regconf">Confirmar Contraseña</string>
     <string name="regS">Siguiente</string>
+    <string name="estanombre">Nombre</string>
+    <string name="estadatos">Datos Estacionamiento</string>
+    <string name="estarfc">RFC</string>
+    <string name="estahorario">Horario</string>
+    <string name="estade">De</string>
+    <string name="estaa">A</string>
+    <string name="estaespacios">Espacios</string>
+    <string name="estah">Precio por hora</string>
+    <string name="estaf">Precio por hora</string>
+    <string name="estafr">Precio por fracción</string>
+    <string name="estadire">Dirección</string>
+    <string name="estareg" translatable="false">Registrar</string>
+    <string name="mainus">Usuario</string>
+    <string name="mainc">Contraseña</string>
+    <string name="mainis">Iniciar Sesión</string>
+    <string name="mainre">Registrarse</string>
 </resources>
