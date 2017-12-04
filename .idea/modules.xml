@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WipDgo.iml" filepath="$PROJECT_DIR$/WipDgo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Estacionamiento.iml" filepath="$PROJECT_DIR$/Estacionamiento.iml" />
+      <module fileurl="file://C:\Users\josed\Desktop\Semestre\Implementacion\Proyectofinal\Wip\Prototipo\Estacionamiento.iml" filepath="C:\Users\josed\Desktop\Semestre\Implementacion\Proyectofinal\Wip\Prototipo\Estacionamiento.iml" />
+      <module fileurl="file://C:\Users\m_nl_\Documents\ImplementaciondeAplicacionesMoviles\Estacionamientos\Estacionamiento\Prototipo.iml" filepath="C:\Users\m_nl_\Documents\ImplementaciondeAplicacionesMoviles\Estacionamientos\Estacionamiento\Prototipo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
