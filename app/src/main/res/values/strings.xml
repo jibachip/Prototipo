@@ -27,10 +27,12 @@
     <string name="estadireccion">Direccion</string>
     <string name="estaregistrar" translatable="false">Registrar</string>
     <string name="perreg" translatable="false">Registro</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
 
     <string-array name="Genero">
-        <item>Masculino</item>
-        <item>Femenino</item>
+        <item>@string/masculino</item>
+        <item>@string/femenino</item>
     </string-array>
     <string name="title_activity_main2" translatable="false">Main2Activity</string>
     <string name="action_settings" translatable="false">Settings</string>
@@ -48,7 +50,7 @@
     <string name="estaa">A</string>
     <string name="estaespacios">Espacios</string>
     <string name="estah">Precio por hora</string>
-    <string name="estaf">Precio por hora</string>
+    <string name="estaf" translatable="false">Precio por hora</string>
     <string name="estafr">Precio por fracción</string>
     <string name="estadire">Dirección</string>
     <string name="estareg" translatable="false">Registrar</string>
@@ -60,4 +62,45 @@
     <string name="regcp">Contraseña</string>
     <string name="regcc">Confirmar contraseña</string>
     <string name="regcce">Correo electronico</string>
+    <string name="regip">Información Personal</string>
+    <string name="regnombredueño">Nombre(s)</string>
+    <string name="regapellidopaterno">Apellido paterno</string>
+    <string name="regapellidomaterno">Apellido materno</string>
+    <string name="regfecha" translatable="false">dd/MM/yyyy</string>
+    <string name="regtipousuario">Tipo de usuario</string>
+    <string name="regcliente">Cliente</string>
+    <string name="regdueño">Dueño</string>
+    <string name="regisiguiente">Siguiente</string>
+    <string name="tab2nombre">Nombre(s)</string>
+    <string name="tap2apellidopaterno">ApellidoPaterno</string>
+    <string name="tap2apellidomaterno">Apellido Materno</string>
+    <string name="tab2cliente">Client</string>
+    <string name="tab2dueño">Dueño</string>
+    <string name="tab2siguiente">Siguiente</string>
+    <string name="tab2tipodeusuario">Tipo de Usuario</string>
+    <string name="tab3tipodecuenta">Tipo de Cuenta</string>
+    <string name="tab3regular">Regular</string>
+    <string name="tab3premium">Premium</string>
+    <string name="tab3informaciondelvehiculo">Información del Vehiculo</string>
+    <string name="tab3matricula">Matricula</string>
+    <string name="tab3registrar">Registrar</string>
+    <string name="tab4nombredelestacionamiento">Nombre del estacionamiento</string>
+    <string name="tab4rfc">RFC</string>
+    <string name="tab4horario">Horario</string>
+    <string name="tab4de">De</string>
+    <string name="tab4a">A</string>
+    <string name="tab4precio">Precio</string>
+    <string name="tab4precioporhora">Precio por hora</string>
+    <string name="tab4precioporfraccion">Precio por fracción</string>
+    <string name="tab4Siguiente">Siguiente</string>
+    <string name="tab5calle">Calle</string>
+    <string name="tab5direccion">Dirección</string>
+    <string name="tab5numeroexterior">Numero Exterior</string>
+    <string name="tab5colonia">Colonia</string>
+    <string name="tab5cp">Codigo Postal</string>
+    <string name="tab5Ciudad">Ciudad</string>
+    <string name="tab5estado">Estado</string>
+    <string name="tab5registrar">Registrar</string>
+
+
 </resources>
