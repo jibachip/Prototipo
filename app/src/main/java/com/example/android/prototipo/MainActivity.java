@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
         Button button=findViewById(R.id.btnIniciar);
         usuario=findViewById(R.id.etUsu);
         contraseña=findViewById(R.id.etPas);
-        preferences=getSharedPreferences("Cuenta",MODE_PRIVATE);
+        preferences=getSharedPreferences("Datos cuenta",MODE_PRIVATE);
+        boolean b=preferences.contains("Usuario");
 
-        if (preferences.contains("Usuario")){
+        if (b){
             usuario.setText(preferences.getString("Usuario","User"));
             contraseña.setText(preferences.getString("Contraseña","Pass"));
             Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
@@ -55,16 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     //metodo para checar datos en la bd.
-
-
-
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("Usuario", usuario.getText().toString());
                         editor.putString("Contraseña", contraseña.getText().toString());
                         editor.commit();
                         Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                         startActivity(intent);
-
                 }
             }
         });
