@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         if (b){
             usuario.setText(preferences.getString("Usuario","User"));
             contraseña.setText(preferences.getString("Contraseña","Pass"));
-            Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
+            Intent intent=new Intent(getApplicationContext(),Saludo.class);
             startActivity(intent);
         }
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("Usuario", usuario.getText().toString());
                         editor.putString("Contraseña", contraseña.getText().toString());
                         editor.commit();
-                        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), Saludo.class);
                         startActivity(intent);
                 }
             }
