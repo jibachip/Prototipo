@@ -28,6 +28,7 @@ public class Saludo extends AppCompatActivity implements GoogleApiClient.Connect
     static int cont1 = 0, cont2 = 0;
     static boolean desco = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
