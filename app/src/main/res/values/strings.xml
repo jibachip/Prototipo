@@ -101,6 +101,7 @@
     <string name="tab5Ciudad">Ciudad</string>
     <string name="tab5estado">Estado</string>
     <string name="tab5registrar">Registrar</string>
+    <string name="title_activity_maps2">Map</string>
 
 
 </resources>
