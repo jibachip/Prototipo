@@ -1,5 +1,6 @@
 package com.example.android.prototipo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
@@ -83,8 +84,8 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                     horaAC = Saludo.esta[v][5]+ " - " + Saludo.esta[v][6];
                     precio = Saludo.esta[v][7];
                     disp = Saludo.esta[v][8];
-                    /*Intent intent = new Intent(MapsActivity.this,Datos_Esta.class);
-                    startActivity(intent);*/
+                    Intent intent = new Intent(MapsActivity2.this,Datos_Esta.class);
+                    startActivity(intent);
                 }
                 return false;
             }
