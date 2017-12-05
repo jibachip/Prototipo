@@ -1,6 +1,8 @@
 package com.example.android.prototipo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,8 @@ public class RegistroTab extends AppCompatActivity {
         EditText correo,usuario,contraseña,confcontraseña,nombre,apPat,apMat,fechaNac,placas,nombreEst,rfc,precioHora,precioFrac, calle,numext,colonia,cp,ciudad,estado;
         Spinner genero,hrCierre,hrInic;
         RadioButton cliente,dueño;
+       static SharedPreferences cuenta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,7 @@ public class RegistroTab extends AppCompatActivity {
         cp=findViewById(R.id.etCP);
         ciudad=findViewById(R.id.etCiudad);
         estado=findViewById(R.id.etEstado);
+        cuenta=getSharedPreferences("Datos cuenta", Context.MODE_PRIVATE);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(getApplicationContext(),R.array.Genero,R.layout.support_simple_spinner_dropdown_item);
         genero.setAdapter(adapter);
 
@@ -121,7 +126,6 @@ public class RegistroTab extends AppCompatActivity {
             }
         });
 
-
         btntab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,6 +151,10 @@ public class RegistroTab extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (placas.getText().length()!=0) {
+                    SharedPreferences.Editor editor=cuenta.edit();
+                    editor.putString("Usuario",usuario.getText().toString());
+                    editor.putString("Contraseña",contraseña.getText().toString());
+                    editor.commit();
                     Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                     startActivity(intent);
                 }
@@ -176,6 +184,10 @@ public class RegistroTab extends AppCompatActivity {
             public void onClick(View view) {
                 if (calle.getText().length()!=0 && colonia.getText().length()!=0 && numext.getText().length()!=0 && cp.getText().length()!=0 &&
                         ciudad.getText().length()!=0 && estado.getText().length()!=0){
+                    SharedPreferences.Editor editor=cuenta.edit();
+                    editor.putString("Usuario",usuario.getText().toString());
+                    editor.putString("Contraseña",contraseña.getText().toString());
+                    editor.commit();
                     Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                 }
