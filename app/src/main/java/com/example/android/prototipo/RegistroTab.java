@@ -190,7 +190,6 @@ public class RegistroTab extends AppCompatActivity {
                     editor.putString("Usuario",usuario.getText().toString());
                     editor.putString("Contraseña",contraseña.getText().toString());
                     editor.commit();
-                    con=cuenta.getString("Usuario","User");
                     Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                 }

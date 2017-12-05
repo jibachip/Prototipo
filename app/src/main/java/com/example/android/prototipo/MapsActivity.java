@@ -31,7 +31,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         prec=getSharedPreferences("Datos cuenta",MODE_PRIVATE);
         String s =prec.getString("Usuario","User");
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
 
 
         fab.setOnClickListener(new View.OnClickListener() {
