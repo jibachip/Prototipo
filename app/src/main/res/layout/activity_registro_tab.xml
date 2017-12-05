@@ -61,7 +61,6 @@
                             android:drawableLeft="@drawable/ic_email_black_24dp"
                             android:drawablePadding="8dp"
                             android:hint="@string/regCorreo"
-
                             android:inputType="textEmailAddress"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -205,7 +204,6 @@
                             android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="10dp"
-
                             android:gravity="center_vertical"
                             android:spinnerMode="dialog"
                             app:layout_constraintEnd_toEndOf="parent"
