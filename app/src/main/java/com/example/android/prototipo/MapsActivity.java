@@ -1,5 +1,6 @@
 package com.example.android.prototipo;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
@@ -15,10 +16,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    SharedPreferences prec;
     private GoogleMap mMap;
     LatLng ubi;
     double lat = 0,lon = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +29,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
+        prec=getSharedPreferences("Datos cuenta",MODE_PRIVATE);
+        String s =prec.getString("Usuario","User");
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
 
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MapsActivity.this,"Locación guardada",Toast.LENGTH_LONG).show();
+
                 finish();
             }
         });
