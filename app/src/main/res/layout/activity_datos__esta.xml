@@ -23,6 +23,7 @@
         app:layout_constraintVertical_bias="0.016"
         android:layout_width="0dp" />
 
+
     <TextView
         android:id="@+id/tvDireccion"
         android:layout_width="0dp"
@@ -98,7 +99,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="359dp"
         android:layout_height="286dp"
-        android:layout_below="@+id/view"
+        android:layout_below="@+id/btnReserva"
         android:layout_marginBottom="33dp"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="9dp"
