@@ -21,6 +21,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     static String precio = "No ha seleccionado un estacionamiento";
     static String disp = "No ha seleccionado un estacionamiento";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
