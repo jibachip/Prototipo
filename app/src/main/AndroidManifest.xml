@@ -25,8 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registro_dueno" />
-        <activity android:name=".Datos_estacionamiento" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -49,7 +47,7 @@
         <activity
             android:name=".MapsActivity2"
             android:label="@string/title_activity_maps2" />
-        <activity android:name=".AccesoDatosWIP.Datos_Esta"></activity>
+        <activity android:name=".Datos_Esta"></activity>
     </application>
 
 </manifest>

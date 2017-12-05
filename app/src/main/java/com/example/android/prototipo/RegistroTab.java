@@ -280,8 +280,8 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                     else if(rbPremium.isChecked()){
                         bdTipoCliente="PREMIUM";
                     }
-                    Llamadas llamadas=new Llamadas(RegistroTab.this);
-                    llamadas.execute(
+                    Llamadas llamadas2 =new Llamadas(RegistroTab.this);
+                    llamadas2.execute(
                             Constantes.Insertar,
                             Constantes.Usuarios,
                             Constantes.Clientes,
@@ -345,8 +345,8 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                     bdCiudad=etCiudad.getText().toString();
                     bdEstado=etEstado.getText().toString();
 
-                    Llamadas llamadas=new Llamadas(RegistroTab.this);
-                    llamadas.execute(
+                    Llamadas llamadas2 =new Llamadas(RegistroTab.this);
+                    llamadas2.execute(
                             Constantes.Insertar,
                             Constantes.Usuarios,
                             Constantes.Dueños,
