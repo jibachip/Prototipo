@@ -126,7 +126,6 @@ public class RegistroTab extends AppCompatActivity {
             }
         });
 
-
         btntab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
