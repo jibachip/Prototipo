@@ -20,7 +20,9 @@ public class RegistroTab extends AppCompatActivity {
         EditText correo,usuario,contraseña,confcontraseña,nombre,apPat,apMat,fechaNac,placas,nombreEst,rfc,precioHora,precioFrac, calle,numext,colonia,cp,ciudad,estado;
         Spinner genero,hrCierre,hrInic;
         RadioButton cliente,dueño;
-       static SharedPreferences cuenta;
+       SharedPreferences cuenta;
+       String con,pas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,6 +190,7 @@ public class RegistroTab extends AppCompatActivity {
                     editor.putString("Usuario",usuario.getText().toString());
                     editor.putString("Contraseña",contraseña.getText().toString());
                     editor.commit();
+                    con=cuenta.getString("Usuario","User");
                     Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                 }

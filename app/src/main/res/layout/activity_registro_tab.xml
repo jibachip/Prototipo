@@ -391,6 +391,19 @@
                             android:imeOptions="actionNext"
                             android:maxLines="1"/>
 
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/etClaveDueño"
+                            android:hint="Clave"
+                            app:layout_constraintTop_toBottomOf="@id/etRFC"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:inputType="text"
+                            android:imeOptions="actionNext"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:maxLines="1"
+                            android:layout_margin="8dp"/>
+
                         <TextView
                             android:id="@+id/tvHora"
                             android:layout_width="0dp"
@@ -401,7 +414,7 @@
                             android:textColor="@color/negro"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etRFC"
+                            app:layout_constraintTop_toBottomOf="@+id/etClaveDueño"
                             />
 
                         <TextView
