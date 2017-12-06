@@ -26,6 +26,29 @@
     <string name="mainre">Sign up</string>
     <string name="regcu">User</string>
     <string name="regcp">Password</string>
+    <string name="tab5direccion">Address</string>
+    <string name="tab5calle">Street</string>
+    <string name="tab5cp">Zip code</string>
+<string name="tab5Ciudad">City</string>
+    <string name="tab5estado">State</string>
     <string name="regcc">Confirm password</string>
     <string name="regcce">E-mail</string>
+    <string name="bienvenidos">Welcome</string>
+<string name="tab2nombre">Name(s)</string>
+<string name="ir_al_mapa">Go to the map</string>
+    <string name="tap2apellidopaterno">Last name</string>
+    <string name="tap2apellidomaterno">Second Last name</string>
+    <string name="tab2tipodeusuario">Type of User</string>
+    <string name="tab3informaciondelvehiculo">Data Vehicle</string>
+    <string name="tab3matricula">Plate license</string>
+    <string name="tab3registrar">Register</string>
+    <string name="tab4nombredelestacionamiento">Parking name</string>
+    <string name="tab4rfc">ID number</string>
+    <string name="tab4horario">Schedule</string>
+    <string name="tab4de">From: </string>
+    <string name="tab4a">To: </string>
+    <string name="tab4precio">Price</string>
+    <string name="tab4precioporhora">Hourly Rate</string>
+    <string name="tab4precioporfraccion">Rate by fraction</string>
+
 </resources>
