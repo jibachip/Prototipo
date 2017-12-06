@@ -31,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
         Button button=findViewById(R.id.btnIniciar);
         usuario=findViewById(R.id.etUsu);
         contraseña=findViewById(R.id.etPas);
-        registroTab=new RegistroTab();
-        if (RegistroTab.cuenta.contains("Usuario")){
-            preferences=RegistroTab.cuenta;
+        preferences=getSharedPreferences("Datos cuenta",MODE_PRIVATE);
+        boolean b=preferences.contains("Usuario");
+
+        if (b){
             usuario.setText(preferences.getString("Usuario","User"));
-            contraseña.setText(preferences.getString("Contraseña","Password"));
-            //metodo para checar la base de datos y despues iniciar la activity maps si existe.
+            contraseña.setText(preferences.getString("Contraseña","Pass"));
+            Intent intent=new Intent(getApplicationContext(),Saludo.class);
+            startActivity(intent);
         }
 
         registrarse.setOnClickListener(new View.OnClickListener() {
@@ -54,15 +56,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     //metodo para checar datos en la bd.
-
-                    SharedPreferences.Editor editor=preferences.edit();
-                    editor.putString("Usuario",usuario.getText().toString());
-                    editor.putString("Contraseña",contraseña.getText().toString());
-                    editor.commit();
-                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-                    startActivity(intent);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("Usuario", usuario.getText().toString());
+                        editor.putString("Contraseña", contraseña.getText().toString());
+                        editor.commit();
+                        Intent intent = new Intent(getApplicationContext(), Saludo.class);
+                        startActivity(intent);
                 }
             }
         });
     }
+
+
 }

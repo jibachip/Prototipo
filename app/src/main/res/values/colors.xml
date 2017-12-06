@@ -5,13 +5,17 @@
     <color name="colorAccent">#df000f4d</color>
     <color name="Gris">#ffffff</color>
     <color name="Gris2">#9ebdbdbd</color>
-    <color name="negro">#000000</color>
+    <color name="negro">#787878</color>
     <color name="amarillo">#FF4081</color>
     <color name="colorPrimario">#607d8b</color>
     <color name="colorPrimarioOscuro">#0881e2</color>
     <color name="rojo">#a6fe1a0e</color>
     <color name="fondoAmarillo">#b7fff177</color>
     <color name="primary_material_dark">#607d8b</color>
+    <color name="azul_transparente">#801590d3</color>
     <color name="blanco_transparente">#80ffffff</color>
     <color name="fondoPrimario">#ffffff</color>
+    <color name="negro_transparente">#a2000000</color>
+    <color name="textSecondary">#192c7a</color>
+    <color name="azul_transparente_oscuro">#b9003f8b</color>
 </resources>

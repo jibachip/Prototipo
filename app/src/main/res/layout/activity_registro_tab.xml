@@ -4,19 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
     tools:context="com.example.android.prototipo.RegistroTab"
-    android:background="@drawable/fondo1">
+    tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/backforms" />
 
     <TabHost
         android:id="@+id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,14 +35,15 @@
                     android:id="@android:id/tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/Gris"
                     android:isScrollContainer="true" />
+
             </HorizontalScrollView>
 
             <ScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:fillViewport="true"
-                >
+                android:fillViewport="true">
 
                 <FrameLayout
                     android:id="@android:id/tabcontent"
@@ -47,567 +51,730 @@
                     android:layout_height="match_parent">
 
                     <android.support.constraint.ConstraintLayout
-                        android:id="@+id/tab1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                                          android:id="@+id/tab1"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:orientation="vertical">
 
-                        <EditText
-                            android:id="@+id/etCorreo"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:alpha=".6"
-                            android:drawableLeft="@drawable/ic_email_black_24dp"
-                            android:drawablePadding="8dp"
-                            android:hint="@string/regCorreo"
-                            android:inputType="textEmailAddress"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etConfContra" />
+                                          <EditText
+                                              android:id="@+id/etUsuario"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="30dp"
+                                              android:layout_marginLeft="20dp"
+                                              android:layout_marginRight="20dp"
+                                              android:layout_marginTop="20dp"
+                                              android:background="@drawable/redondeado_gris"
+                                              android:drawableLeft="@drawable/ic_person_black_24dp"
+                                              android:drawablePadding="20dp"
+                                              android:hint="@string/regus"
+                                              android:inputType="textPersonName"
+                                              android:paddingStart="10dp"
+                                              android:textColorHint="#8d8d8d"
+                                              app:layout_constraintLeft_toLeftOf="parent"
+                                              app:layout_constraintRight_toRightOf="parent"
+                                              app:layout_constraintTop_toTopOf="parent" />
 
-                        <EditText
-                            android:id="@+id/etUsuario"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:alpha=".6"
-                            android:drawableLeft="@drawable/ic_person_black_24dp"
-                            android:drawablePadding="8dp"
-                            android:hint="@string/regus"
-                            android:inputType="textPersonName"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                                          <EditText
+                                              android:id="@+id/etContrasena"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="30dp"
+                                              android:layout_marginLeft="20dp"
+                                              android:layout_marginRight="20dp"
+                                              android:layout_marginTop="20dp"
+                                              android:background="@drawable/redondeado_gris"
+                                              android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                                              android:drawablePadding="20dp"
+                                              android:hint="@string/regcon"
+                                              android:inputType="textPassword"
+                                              android:paddingStart="10dp"
+                                              android:textColorHint="#8d8d8d"
+                                              app:layout_constraintLeft_toLeftOf="parent"
+                                              app:layout_constraintRight_toRightOf="parent"
+                                              app:layout_constraintTop_toBottomOf="@id/etUsuario" />
 
-                        <EditText
-                            android:id="@+id/etContraseña"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:alpha=".6"
-                            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-                            android:drawablePadding="8dp"
-                            android:hint="@string/regcon"
-                            android:inputType="textPassword"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/etUsuario" />
+                                          <EditText
+                                              android:id="@+id/etConfContra"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="30dp"
+                                              android:layout_marginLeft="20dp"
+                                              android:layout_marginRight="20dp"
+                                              android:layout_marginTop="20dp"
+                                              android:background="@drawable/redondeado_gris"
+                                              android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                                              android:drawablePadding="20dp"
+                                              android:hint="@string/regconf"
+                                              android:inputType="textPassword"
+                                              android:paddingStart="10dp"
+                                              android:textColorHint="#8d8d8d"
+                                              app:layout_constraintLeft_toLeftOf="parent"
+                                              app:layout_constraintRight_toRightOf="parent"
+                                              app:layout_constraintTop_toBottomOf="@id/etContrasena" />
 
-                        <EditText
-                            android:id="@+id/etConfContra"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:alpha=".6"
-                            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-                            android:drawablePadding="8dp"
-                            android:hint="@string/regconf"
-                            android:inputType="textPassword"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/etContraseña" />
+                                          <EditText
+                                              android:id="@+id/etCorreo"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="30dp"
+                                              android:layout_marginLeft="20dp"
+                                              android:layout_marginRight="20dp"
+                                              android:layout_marginTop="20dp"
+                                              android:background="@drawable/redondeado_gris"
+                                              android:drawableLeft="@drawable/ic_email_black_24dp"
+                                              android:drawablePadding="20dp"
+                                              android:hint="@string/regCorreo"
+                                              android:inputType="textEmailAddress"
+                                              android:paddingStart="10dp"
+                                              android:textColorHint="#8d8d8d"
+                                              app:layout_constraintHorizontal_bias="0.0"
+                                              app:layout_constraintLeft_toLeftOf="parent"
+                                              app:layout_constraintRight_toRightOf="parent"
+                                              app:layout_constraintTop_toBottomOf="@+id/etConfContra" />
 
-                        <Button
-                            android:id="@+id/p1p2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginTop="8dp"
-                            android:drawablePadding="2dp"
-                            android:drawableRight="@drawable/ic_navigate_next_black_24dp"
-                            android:text="@string/regS"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etCorreo"
-                            app:layout_constraintVertical_bias="1.0" />
+                                          <Button
+                                              android:id="@+id/p1p2"
+                                              android:layout_width="150dp"
+                                              android:layout_height="40dp"
+                                              android:layout_marginEnd="16dp"
+                                              android:layout_marginTop="20dp"
+                                              android:background="@drawable/redondeado_gris"
+                                              android:drawablePadding="2dp"
+                                              android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                                              android:text="@string/regS"
+                                              app:layout_constraintEnd_toEndOf="parent"
+                                              app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
 
-                    </android.support.constraint.ConstraintLayout>
-
-                    <android.support.constraint.ConstraintLayout
-                        android:id="@+id/tab2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <EditText
-                            android:id="@+id/etNombre"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:alpha=".6"
-                            android:drawablePadding="8dp"
-                            android:hint="Nombre(s)"
-                            android:inputType="textPersonName"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:layout_constraintLeft_creator="1"
-                            tools:layout_constraintRight_creator="1" />
-
-                        <EditText
-                            android:id="@+id/etApPat"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:alpha=".6"
-                            android:hint="Apellido Paterno"
-                            android:inputType="textPersonName"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etNombre"
-                            tools:layout_constraintLeft_creator="1"
-                            tools:layout_constraintRight_creator="1" />
-
-                        <EditText
-                            android:id="@+id/etApMat"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:alpha=".6"
-                            android:hint="Apellido Materno"
-                            android:inputType="textPersonName"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etApPat"
-                            tools:layout_constraintLeft_creator="1"
-                            tools:layout_constraintRight_creator="1" />
-
-                        <EditText
-                            android:id="@+id/etFechaN"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:alpha=".6"
-                            android:hint="dd/MM/yyyy"
-                            android:inputType="date"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etApMat"
-                            tools:layout_constraintLeft_creator="1"
-                            tools:layout_constraintRight_creator="1" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="16sp"
-    android:text="Género"
-    android:id="@+id/tvGenero"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/etFechaN"/>
-                        <Spinner
-                            android:id="@+id/spGenero"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:spinnerMode="dialog"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintLeft_toRightOf="@id/tvGenero"
-                            app:layout_constraintTop_toBottomOf="@id/etFechaN" />
-
-                        <TextView
-                            android:id="@+id/tvTipUs"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:layout_marginTop="10dp"
-                            android:alpha=".6"
-                            android:background="#fff"
-                            android:gravity="center"
-                            android:text="Tipo de usuario"
-                            android:textColor="@android:color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/spGenero" />
-
-                        <RadioGroup
-                            android:id="@+id/rbgUsu"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            app:layout_constraintTop_toBottomOf="@id/tvTipUs">
-
-                            <RadioButton
-                                android:id="@+id/rbCliente"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="12dp"
-                                android:checked="true"
-                                android:text="Cliente" />
-
-                            <RadioButton
-                                android:id="@+id/rbDueño"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="12dp"
-                                android:text="Dueño" />
-                        </RadioGroup>
-
-                        <Button
-                            android:id="@+id/p2p3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginTop="10dp"
-                            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
-                            android:text="Siguiente"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/rbgUsu" />
-                    </android.support.constraint.ConstraintLayout>
+                                      </android.support.constraint.ConstraintLayout>
 
                     <android.support.constraint.ConstraintLayout
-                        android:id="@+id/tab3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                                              android:id="@+id/tab2"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tvCuenta"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="12dp"
-                            android:layout_marginTop="20dp"
-                            android:background="@color/Gris"
-                            android:gravity="center"
-                            android:text="Tipo de Cuenta"
-                            android:textColor="@color/negro"
-                            android:textSize="18sp"
-                            app:layout_constraintRight_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                                              <EditText
+                                                  android:id="@+id/etNombre"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="20dp"
+                                                  android:layout_marginRight="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:hint="Nombre(s)"
+                                                  android:inputType="textPersonName"
+                                                  android:paddingStart="10dp"
+                                                  android:textColorHint="#8d8d8d"
+                                                  app:layout_constraintLeft_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toTopOf="parent"
+                                                  tools:layout_constraintLeft_creator="1"
+                                                  tools:layout_constraintRight_creator="1" />
 
-                        <RadioGroup
-                            android:id="@+id/rbgCuenta"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            app:layout_constraintLeft_toRightOf="parent"
-                            app:layout_constraintRight_toLeftOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvCuenta">
+                                              <EditText
+                                                  android:id="@+id/etApPat"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="20dp"
+                                                  android:layout_marginRight="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:hint="Apellido Paterno"
+                                                  android:inputType="textPersonName"
+                                                  android:paddingStart="10dp"
+                                                  android:textColorHint="#8d8d8d"
+                                                  app:layout_constraintLeft_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@+id/etNombre"
+                                                  tools:layout_constraintLeft_creator="1"
+                                                  tools:layout_constraintRight_creator="1" />
 
-                            <RadioButton
-                                android:id="@+id/rbRegu"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="12dp"
-                                android:checked="true"
-                                android:text="Regular" />
+                                              <EditText
+                                                  android:id="@+id/etApMat"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="20dp"
+                                                  android:layout_marginRight="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:hint="Apellido Materno"
+                                                  android:inputType="textPersonName"
+                                                  android:paddingStart="10dp"
+                                                  android:textColorHint="#8d8d8d"
+                                                  app:layout_constraintLeft_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@+id/etApPat"
+                                                  tools:layout_constraintLeft_creator="1"
+                                                  tools:layout_constraintRight_creator="1" />
 
-                            <RadioButton
-                                android:id="@+id/rbPremium"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="12dp"
-                                android:text="Premium" />
-                        </RadioGroup>
 
-                        <TextView
-                            android:id="@+id/tvInfo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="12dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="20dp"
-                            android:background="@color/Gris"
-                            android:gravity="center"
-                            android:text="Información del Vehiculo"
-                            android:textColor="@color/negro"
-                            android:textSize="18sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/rbgCuenta" />
+                                              <EditText
+                                                  android:id="@+id/etFechaN"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_centerHorizontal="true"
+                                                  android:layout_marginEnd="20dp"
+                                                  android:layout_marginStart="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:clickable="true"
+                                                  android:drawablePadding="20dp"
+                                                  android:editable="false"
+                                                  android:focusable="false"
+                                                  android:hint="Fecha de nacimiento"
+                                                  android:inputType="date"
+                                                  android:paddingStart="10dp"
+                                                  android:textColorHint="#8d8d8d"
+                                                  app:layout_constraintLeft_toLeftOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@+id/etApMat"
+                                                  tools:layout_constraintLeft_creator="1"
+                                                  tools:layout_constraintRight_creator="1" />
 
-                        <EditText
-                            android:id="@+id/etMatricula"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:alpha=".6"
-                            android:hint="Matrícula"
-                            android:inputType="textPersonName"
-                            app:layout_constraintRight_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvInfo" />
+                                              <Spinner
+                                                  android:id="@+id/spGenero"
+                                                  android:layout_width="100dp"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_marginBottom="20dp"
+                                                  android:layout_marginEnd="20dp"
+                                                  android:layout_marginStart="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:paddingStart="20dp"
+                                                  android:background="@drawable/redondeado_negro"
+                                                  android:popupTheme="@color/negro_transparente"
+                                                  android:popupBackground="@color/negro_transparente"
+                                                  app:layout_constraintEnd_toEndOf="parent"
+                                                  app:layout_constraintStart_toStartOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@id/etFechaN" />
 
-                        <Button
-                            android:id="@+id/btnRegCliente"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:alpha=".8"
-                            android:background="#4caf50"
-                            android:text="Registrar"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent" />
-                    </android.support.constraint.ConstraintLayout>
+                                              <TextView
+                                                  android:id="@+id/tvTipUs"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="10dp"
+                                                  android:layout_marginRight="10dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:gravity="center"
+                                                  android:paddingStart="10dp"
+                                                  android:text="Tipo de usuario"
+                                                  android:textColor="@android:color/black"
+                                                  android:textSize="18sp"
+                                                  android:textStyle="bold"
+                                                  app:layout_constraintLeft_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@id/spGenero" />
+
+                                              <RadioGroup
+                                                  android:id="@+id/rbgUsu"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_marginEnd="20dp"
+                                                  android:layout_marginStart="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_amarillo"
+                                                  app:layout_constraintTop_toBottomOf="@id/tvTipUs">
+
+                                                  <RadioButton
+                                                      android:id="@+id/rbCliente"
+                                                      android:layout_width="100dp"
+                                                      android:layout_height="30dp"
+                                                      android:layout_marginLeft="20dp"
+                                                      android:layout_marginRight="20dp"
+                                                      android:layout_marginTop="10dp"
+                                                      android:background="@drawable/redondeado_blanco_transparente"
+                                                      android:checked="true"
+                                                      android:drawablePadding="20dp"
+                                                      android:paddingStart="10dp"
+                                                      android:text="Cliente" />
+
+                                                  <RadioButton
+                                                      android:id="@+id/rbDueño"
+                                                      android:layout_width="100dp"
+                                                      android:layout_height="30dp"
+                                                      android:layout_marginBottom="10dp"
+                                                      android:layout_marginLeft="20dp"
+                                                      android:layout_marginRight="20dp"
+                                                      android:layout_marginTop="10dp"
+                                                      android:background="@drawable/redondeado_blanco_transparente"
+                                                      android:drawablePadding="20dp"
+                                                      android:paddingStart="10dp"
+                                                      android:text="Dueño" />
+                                              </RadioGroup>
+
+                                              <EditText
+                                                  android:id="@+id/etClave"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="20dp"
+                                                  android:layout_marginRight="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:hint="Clave unica de estacionamiento"
+                                                  android:inputType="textPersonName"
+                                                  android:paddingStart="10dp"
+                                                  android:textColorHint="#8d8d8d"
+                                                  android:visibility="invisible"
+                                                  app:layout_constraintLeft_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@+id/rbgUsu"
+                                                  tools:layout_constraintLeft_creator="1"
+                                                  tools:layout_constraintRight_creator="1" />
+
+                                              <Button
+                                                  android:id="@+id/p2p3"
+                                                  android:layout_width="150dp"
+                                                  android:layout_height="40dp"
+                                                  android:layout_marginBottom="20dp"
+                                                  android:layout_marginEnd="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="2dp"
+                                                  android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                                                  android:text="@string/regS"
+                                                  app:layout_constraintBottom_toBottomOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@+id/etClave" />
+
+                                          </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                                              android:id="@+id/tab3"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:orientation="vertical">
+
+                                              <TextView
+                                                  android:id="@+id/tvCuenta"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="10dp"
+                                                  android:layout_marginRight="10dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:gravity="center"
+                                                  android:paddingStart="10dp"
+                                                  android:text="Tipo de Cuenta"
+                                                  android:textColor="@android:color/black"
+                                                  android:textSize="18sp"
+                                                  android:textStyle="bold"
+                                                  app:layout_constraintRight_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintStart_toStartOf="parent"
+                                                  app:layout_constraintTop_toTopOf="parent" />
+
+                                              <RadioGroup
+                                                  android:id="@+id/rbgCuenta"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_marginEnd="20dp"
+                                                  android:layout_marginStart="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_amarillo"
+                                                  app:layout_constraintLeft_toRightOf="parent"
+                                                  app:layout_constraintRight_toLeftOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@id/tvCuenta">
+
+                                                  <RadioButton
+                                                      android:id="@+id/rbRegu"
+                                                      android:layout_width="120dp"
+                                                      android:layout_height="30dp"
+                                                      android:layout_marginLeft="20dp"
+                                                      android:layout_marginRight="20dp"
+                                                      android:layout_marginTop="10dp"
+                                                      android:background="@drawable/redondeado_blanco_transparente"
+                                                      android:checked="true"
+                                                      android:drawablePadding="20dp"
+                                                      android:paddingStart="10dp"
+                                                      android:text="Regular" />
+
+                                                  <RadioButton
+                                                      android:id="@+id/rbPremium"
+                                                      android:layout_width="120dp"
+                                                      android:layout_height="30dp"
+                                                      android:layout_marginBottom="10dp"
+                                                      android:layout_marginLeft="20dp"
+                                                      android:layout_marginRight="20dp"
+                                                      android:layout_marginTop="10dp"
+                                                      android:background="@drawable/redondeado_blanco_transparente"
+                                                      android:drawablePadding="20dp"
+                                                      android:paddingStart="10dp"
+                                                      android:text="Premium" />
+                                              </RadioGroup>
+
+                                              <TextView
+                                                  android:id="@+id/tvInfo"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginEnd="10dp"
+                                                  android:layout_marginLeft="20dp"
+                                                  android:layout_marginRight="20dp"
+                                                  android:layout_marginStart="10dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:gravity="center"
+                                                  android:paddingStart="10dp"
+                                                  android:text="Información del Vehiculo"
+                                                  android:textColor="@android:color/black"
+                                                  android:textSize="18sp"
+                                                  android:textStyle="bold"
+                                                  app:layout_constraintEnd_toEndOf="parent"
+                                                  app:layout_constraintStart_toStartOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@id/rbgCuenta" />
+
+                                              <EditText
+                                                  android:id="@+id/etMatricula"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="30dp"
+                                                  android:layout_marginLeft="20dp"
+                                                  android:layout_marginRight="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_gris"
+                                                  android:drawablePadding="20dp"
+                                                  android:hint="Matrícula"
+                                                  android:paddingStart="10dp"
+                                                  android:textColorHint="#8d8d8d"
+                                                  app:layout_constraintRight_toLeftOf="parent"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@id/tvInfo" />
+
+
+                                              <Button
+                                                  android:id="@+id/btnRegCliente"
+                                                  android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_marginEnd="20dp"
+                                                  android:layout_marginTop="20dp"
+                                                  android:background="@drawable/redondeado_azul_transparente"
+                                                  android:padding="12dp"
+                                                  android:text="Registrar"
+                                                  app:layout_constraintRight_toRightOf="parent"
+                                                  app:layout_constraintTop_toBottomOf="@+id/etMatricula" />//>
+                                          </android.support.constraint.ConstraintLayout>
 
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/tab4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    />
+
                         <EditText
-                            android:inputType="text"
                             android:id="@+id/etNombreEst"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
                             android:hint="Nombre del estacionamiento"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvDatEst"
-                            android:imeOptions="actionNext"
-                            android:maxLines="1"/>
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <EditText
                             android:id="@+id/etRFC"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:layout_marginStart="8dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
                             android:hint="RFC"
-                            android:inputType="text"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintRight_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/etNombreEst"
-                            android:imeOptions="actionNext"
-                            android:maxLines="1"/>
+                            app:layout_constraintTop_toBottomOf="@id/etNombreEst" />
 
                         <TextView
                             android:id="@+id/tvHora"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:paddingStart="10dp"
                             android:text="Horario"
                             android:textAlignment="center"
-                            android:textColor="@color/negro"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etRFC"
-                            />
+                            app:layout_constraintTop_toBottomOf="@+id/etRFC" />
 
                         <TextView
-                            android:id="@+id/de"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:text="De"
-                            app:layout_constraintHorizontal_chainStyle="packed"
-                            app:layout_constraintRight_toLeftOf="@+id/spHoraInic"
+                            android:id="@+id/tvDe"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:text="De:"
+                            android:textColor="@color/negro"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/spHoraInic"
                             app:layout_constraintTop_toBottomOf="@+id/tvHora" />
 
                         <Spinner
                             android:id="@+id/spHoraInic"
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            app:layout_constraintLeft_toRightOf="@+id/de"
-                            app:layout_constraintRight_toRightOf="parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="20dp"
+                            android:background="@drawable/redondeado_negro"
+                            android:popupTheme="@color/negro_transparente"
+                            android:popupBackground="@color/negro_transparente"
+                            app:layout_constraintEnd_toStartOf="@id/tvA"
+                            app:layout_constraintStart_toEndOf="@+id/tvDe"
                             app:layout_constraintTop_toBottomOf="@+id/tvHora" />
 
                         <TextView
-                            android:id="@+id/a"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="A"
-                            app:layout_constraintHorizontal_chainStyle="packed"
-                            app:layout_constraintLeft_toRightOf="@id/spHoraInic"
-                            app:layout_constraintRight_toLeftOf="@id/spHoraCierre"
-                            app:layout_constraintTop_toBottomOf="@+id/tvHora" />
+                            android:id="@+id/tvA"
+                            android:layout_width="40dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:text="A:"
+                            android:textColor="@color/negro"
+                            app:layout_constraintTop_toBottomOf="@+id/tvHora"
+                            app:layout_constraintStart_toEndOf="@id/spHoraInic"
+                            app:layout_constraintEnd_toStartOf="@id/spHoraCierre"
+                            tools:ignore="MissingConstraints"
+                            tools:layout_editor_absoluteX="170dp" />
 
                         <Spinner
                             android:id="@+id/spHoraCierre"
-                            android:layout_width="wrap_content"
+                            android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:animateLayoutChanges="true"
-                            app:layout_constraintLeft_toRightOf="@+id/a"
-                            app:layout_constraintRight_toRightOf="parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="20dp"
+                            android:background="@drawable/redondeado_negro"
+                            android:popupTheme="@color/negro_transparente"
+                            android:popupBackground="@color/negro_transparente"
+                            app:layout_constraintStart_toEndOf="@+id/tvA"
                             app:layout_constraintTop_toBottomOf="@+id/tvHora" />
 
                         <TextView
                             android:id="@+id/tvPrecio"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
+                            android:layout_height="30dp"
                             android:layout_marginTop="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:paddingStart="10dp"
                             android:text="Precio"
                             android:textAlignment="center"
-                            android:textColor="@color/negro"
-
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@id/spHoraInic"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/spHoraCierre" />
+                            tools:layout_editor_absoluteY="190dp" />
 
                         <EditText
                             android:id="@+id/etPrecioHora"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
                             android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                            android:drawablePadding="20dp"
                             android:hint="Precio por hora"
                             android:inputType="numberDecimal"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvPrecio"
-                            android:maxLines="1"
-                            android:imeOptions="actionNext"/>
+                            app:layout_constraintTop_toBottomOf="@id/tvPrecio" />
 
                         <EditText
                             android:id="@+id/etPrecioFracc"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
                             android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                            android:drawablePadding="20dp"
                             android:hint="Precio por fraccion"
                             android:inputType="numberDecimal"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/etPrecioHora"
-                            android:maxLines="1"
-                            android:imeOptions="actionDone"/>
+                            app:layout_constraintTop_toBottomOf="@id/etPrecioHora" />
 
                         <Button
                             android:id="@+id/btnsigEst"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:layout_marginRight="16dp"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="2dp"
                             android:drawableRight="@drawable/ic_navigate_next_black_24dp"
-                            android:text="Siguiente"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintRight_toRightOf="parent" />
+                            android:text="@string/regS"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etPrecioFracc" />
 
                     </android.support.constraint.ConstraintLayout>
-
 
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/tab5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <TextView
-                            android:layout_width="match_parent"
-                            android:textSize="18sp"
-                            android:layout_height="wrap_content"
-                            android:text="Dirección"
-                            android:background="#fff"
-                            android:alpha=".6"
-                            android:layout_marginTop="8dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            android:layout_margin="8dp"
                             android:id="@+id/tvDir"
-                            android:gravity="center"
-                            android:maxLines="1"
-                            android:imeOptions="actionNext"/>
-                        <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Calle"
-                            android:id="@+id/etCalle"
-                            android:layout_margin="8dp"
-                            app:layout_constraintTop_toBottomOf="@id/tvDir"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
+                            android:gravity="center"
+                            android:paddingStart="10dp"
+                            android:text="Dirección"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/etCalle"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
+                            android:hint="Calle"
                             android:inputType="textPersonName"
-                            android:maxLines="1"
-                            android:imeOptions="actionNext"/>
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDir" />
+
                         <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Num Ext"
                             android:id="@+id/etNumExt"
-                            android:layout_margin="8dp"
-                            app:layout_constraintTop_toBottomOf="@id/etCalle"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
+                            android:hint="Num Ext"
+                            android:inputType="textPersonName"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintRight_toLeftOf="parent"
-                            android:imeOptions="actionNext"
-                            android:inputType="number"
-                            android:maxLines="1"/>
+                            app:layout_constraintTop_toBottomOf="@id/etCalle" />
+
                         <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:id="@+id/etColonia"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
                             android:hint="Colonia"
-                            android:layout_margin="8dp"
-                            app:layout_constraintTop_toBottomOf="@id/etNumExt"
+                            android:inputType="textPersonName"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintLeft_toLeftOf="parent"
-                            android:imeOptions="actionNext"
-                            android:inputType="text"
-                            android:maxLines="1"
-                            />
+                            app:layout_constraintTop_toBottomOf="@id/etNumExt" />
+
                         <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:imeOptions="actionNext"
-                            android:maxLines="1"
-                            android:hint="Codigo Postal"
-                            android:layout_margin="8dp"
                             android:id="@+id/etCP"
-                            app:layout_constraintTop_toBottomOf="@id/etColonia"
-                            />
-                        <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
+                            android:hint="Codigo Postal"
+                            android:inputType="textPersonName"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
+                            app:layout_constraintTop_toBottomOf="@id/etColonia" />
+
+                        <EditText
                             android:id="@+id/etCiudad"
-                            android:hint="Ciudad"
-                            android:layout_margin="8dp"
-                            app:layout_constraintTop_toBottomOf="@id/etCP"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            android:maxLines="1"
-                            android:inputType="text"
-                            android:imeOptions="actionNext"/>
-                        <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/etEstado"
-                            android:hint="Estado"
-                            android:inputType="text"
-                            android:layout_margin="8dp"
-                            app:layout_constraintTop_toBottomOf="@id/etCiudad"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
+                            android:hint="Ciudad"
+                            android:inputType="textPersonName"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
                             app:layout_constraintLeft_toLeftOf="parent"
-                            android:imeOptions="actionDone"
-                            android:maxLines="1"/>
+                            app:layout_constraintTop_toBottomOf="@id/etCP" />
+
+                        <EditText
+                            android:id="@+id/etEstado"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_gris"
+                            android:drawablePadding="20dp"
+                            android:hint="Estado"
+                            android:inputType="textPersonName"
+                            android:paddingStart="10dp"
+                            android:textColorHint="#8d8d8d"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/etCiudad" />
+
                         <Button
+                            android:id="@+id/btnRegisDueño"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="#4caf50"
-                            android:text="Registrar"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/redondeado_azul_transparente"
                             android:padding="12dp"
-                            android:id="@+id/btnRegisDueño"
-                            app:layout_constraintTop_toBottomOf="@id/etEstado"
+                            android:text="Registrar"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintVertical_bias=".9"
-                            android:layout_margin="16dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/etEstado" />
                     </android.support.constraint.ConstraintLayout>
-
 
                 </FrameLayout>
             </ScrollView>
-
         </LinearLayout>
     </TabHost>
 </android.support.constraint.ConstraintLayout>
