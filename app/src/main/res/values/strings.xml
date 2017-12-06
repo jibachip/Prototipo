@@ -21,6 +21,7 @@
     </string-array>
     <string name="title_activity_maps" translatable="false">Map</string>
 
+    <string name="bienvenidos">Bienvenido</string>
 
     <string name="estaprecioH">Precio por hora</string>
     <string name="estaprecioF" translatable="false">Precio por fracción</string>
@@ -102,6 +103,10 @@
     <string name="tab5estado">Estado</string>
     <string name="tab5registrar">Registrar</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="ir_al_mapa">Ir al mapa</string>
+    <string name="dueño">Owner</string>
+
 
 
 </resources>
