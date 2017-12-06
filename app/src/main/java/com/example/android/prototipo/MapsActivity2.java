@@ -86,6 +86,8 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                     disp = Saludo.esta[v][8];
                     Intent intent = new Intent(MapsActivity2.this,Datos_Esta.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
+
                 }
                 return false;
             }
