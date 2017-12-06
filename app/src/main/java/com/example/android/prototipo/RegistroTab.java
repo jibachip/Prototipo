@@ -205,6 +205,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                             bdCorreo=etCorreo.getText().toString();
                             tabHost.getTabWidget().getChildTabViewAt(1).setVisibility(View.VISIBLE);
                             tabHost.setCurrentTabByTag("Tab Two");
+                            overridePendingTransition(R.anim.left_in, R.anim.left_out);
                         }else{
                             genToast("Las contraseñas ingresadas no coinciden");
                         }
@@ -250,6 +251,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                         bdTipoUsuario=rbCliente.getText().toString();
                         tabHost.getTabWidget().getChildTabViewAt(2).setVisibility(View.VISIBLE);
                         tabHost.setCurrentTabByTag("Tab Three");
+                        overridePendingTransition(R.anim.left_in, R.anim.left_out);
                     }
                     else if (rbDueño.isChecked()){
                         if(etClave.getText().length()==10){
@@ -258,6 +260,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                             tabHost.getTabWidget().getChildTabViewAt(2).setVisibility(View.GONE);
                             tabHost.getTabWidget().getChildTabViewAt(3).setVisibility(View.VISIBLE);
                             tabHost.setCurrentTabByTag("Tab Four");
+                            overridePendingTransition(R.anim.left_in, R.anim.left_out);
                         }else{
                             genToast("Ingrese la clave que se le proporciono para su estacionamiento");
                         }
@@ -296,8 +299,9 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                             bdGenero,
                             bdTipoCliente,
                             bdMatricula);
-                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), Saludo.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
                 else{
                     genToast("Es necesario llenar todos los campos");
@@ -375,6 +379,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
 
                     Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
                 else{
                     genToast("Es necesario llenar todos los campos");

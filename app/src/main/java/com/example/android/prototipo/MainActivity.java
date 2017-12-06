@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             contraseña.setText(preferences.getString("Contraseña","Pass"));
             Intent intent=new Intent(getApplicationContext(),Saludo.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.fab_open, R.anim.fab_close);
         }
 
         registrarse.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(getApplicationContext(), RegistroTab.class);
                 startActivity(intent);
+
+                overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.commit();
                         Intent intent = new Intent(getApplicationContext(), Saludo.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
                 }
             }
         });
