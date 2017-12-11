@@ -78,7 +78,7 @@ public class Datos_Esta extends AppCompatActivity {
                 DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy"); //formato para obtener la fecha
                 hor = (hora.format(date)).toString().trim();
                 String fec = (fecha.format(date)).toString().trim();
-                textoDatos = textoDatos+","+hor+","+fec;;     //Guardamos lo que tiene el EditText en la variable textoDatos y quitamos los excesos con '.trim'
+                textoDatos = ","+hor+","+fec;;     //Guardamos lo que tiene el EditText en la variable textoDatos y quitamos los excesos con '.trim'
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();  //Este objeto se crea para codificar un codigo usando la configuracion predeterminada
                 try{
                     BitMatrix bitMatrix = multiFormatWriter.encode(textoDatos, BarcodeFormat.QR_CODE,200,200); //Para la representacion de una matriz 2D de bits donde:3

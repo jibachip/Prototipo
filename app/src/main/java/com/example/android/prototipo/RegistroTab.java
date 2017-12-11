@@ -2,7 +2,6 @@ package com.example.android.prototipo;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -17,17 +16,27 @@ import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.android.prototipo.AccesoDatosWIP.Constantes;
-import com.example.android.prototipo.AccesoDatosWIP.Llamadas;
+
+import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class RegistroTab extends AppCompatActivity implements View.OnClickListener {
 
 
-        SQLiteDatabase db;
 
         TabHost tabHost;
         EditText
@@ -44,7 +53,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                 etNombreEst,
                 etRfc,
                 etPrecioHora,
-                etPrecioFrac,
+                etLugares,
                 etCalle,
                 etNumExt,
                 etColonia,
@@ -52,9 +61,14 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                 etCiudad,
                 etEstado;
 
+        RequestQueue rq;
+        JsonRequest jrq;
+
         Spinner spGenero, spHrCierre, spHrInic;
         RadioButton rbCliente, rbDueño, rbRegular, rbPremium;
-        private int bdIdUsuario;
+
+        HashMap<String, String> params = new HashMap<String, String>();
+        //JSONObject params=new JSONObject();
         private String bdUsuario;
         private String bdContrasena;
         private String bdCorreo;
@@ -83,6 +97,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
         private String bdCodigoPostal;
         private String bdCiudad;
         private String bdEstado;
+        private String bdLugaresDisp;
     private DatePickerDialog BornDatePickerDialog;
     private SimpleDateFormat dateFormatter;
     @Override
@@ -121,7 +136,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
         //INICIO Datos generales del estacionamiento
         //===========================
         etPrecioHora =findViewById(R.id.etPrecioHora);
-        etPrecioFrac =findViewById(R.id.etPrecioFracc);
+        etLugares =findViewById(R.id.etLugares);
         spHrInic =findViewById(R.id.spHoraInic);
         spHrCierre =findViewById(R.id.spHoraCierre);
         etCalle =findViewById(R.id.etCalle);
@@ -130,6 +145,10 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
         etCodigoPostal =findViewById(R.id.etCP);
         etCiudad =findViewById(R.id.etCiudad);
         etEstado =findViewById(R.id.etEstado);
+
+
+        rq= Volley.newRequestQueue(getApplicationContext());
+
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         //ESTABLECE LOS VALORES CORRESPONDIENTES A LOS COMPONENTES SPINNER
@@ -248,14 +267,14 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                     bdFechaNac=etFechaNac.getText().toString();
                     bdGenero=spGenero.getSelectedItem().toString();
                     if (rbCliente.isChecked()){
-                        bdTipoUsuario=rbCliente.getText().toString();
+                        bdTipoUsuario ="Cliente";
                         tabHost.getTabWidget().getChildTabViewAt(2).setVisibility(View.VISIBLE);
                         tabHost.setCurrentTabByTag("Tab Three");
                         overridePendingTransition(R.anim.left_in, R.anim.left_out);
                     }
                     else if (rbDueño.isChecked()){
                         if(etClave.getText().length()==10){
-                            bdTipoUsuario=rbDueño.getText().toString();
+                            bdTipoUsuario ="Dueno";
                             bdClave=etClave.getText().toString();
                             tabHost.getTabWidget().getChildTabViewAt(2).setVisibility(View.GONE);
                             tabHost.getTabWidget().getChildTabViewAt(3).setVisibility(View.VISIBLE);
@@ -283,25 +302,11 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                     else if(rbPremium.isChecked()){
                         bdTipoCliente="PREMIUM";
                     }
-                    Llamadas llamadas2 =new Llamadas(RegistroTab.this);
-                    llamadas2.execute(
-                            Constantes.Insertar,
-                            Constantes.Usuarios,
-                            Constantes.Clientes,
-                            bdTipoUsuario,
-                            bdUsuario,
-                            bdContrasena,
-                            bdCorreo,
-                            bdNombres,
-                            bdApPaterno,
-                            bdApMaterno,
-                            bdFechaNac,
-                            bdGenero,
-                            bdTipoCliente,
-                            bdMatricula);
-                    Intent intent = new Intent(getApplicationContext(), Saludo.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    try {
+                        RegistroUsuario(Constantes.Clientes);
+                    } catch (JSONException e) {
+
+                    }
                 }
                 else{
                     genToast("Es necesario llenar todos los campos");
@@ -315,12 +320,13 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                 if (etNombreEst.getText().length()!=0 &&
                         etRfc.getText().length()!=0 &&
                         etPrecioHora.getText().length()!=0 &&
-                        etPrecioFrac.getText().length()!=0 &&
+                        etLugares.getText().length()!=0 &&
                         spHrInic.getSelectedItem()!=null &&
                         spHrCierre.getSelectedItem()!=null){
                     bdNombreEst=etNombreEst.getText().toString();
                     bdRFC=etRfc.getText().toString();
                     bdPrecio=Double.parseDouble(etPrecioHora.getText().toString());
+                    bdLugaresDisp=etLugares.getText().toString();
                     bdHoraInicio=spHrInic.getSelectedItem().toString();
                     bdHoraFin=spHrCierre.getSelectedItem().toString();
                     tabHost.setCurrentTabByTag("Tab Five");
@@ -349,37 +355,12 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                     bdCiudad=etCiudad.getText().toString();
                     bdEstado=etEstado.getText().toString();
 
-                    Llamadas llamadas2 =new Llamadas(RegistroTab.this);
-                    llamadas2.execute(
-                            Constantes.Insertar,
-                            Constantes.Usuarios,
-                            Constantes.Dueños,
-                            bdTipoUsuario,
-                            bdUsuario,
-                            bdContrasena,
-                            bdCorreo,
-                            bdNombres,
-                            bdApPaterno,
-                            bdApMaterno,
-                            bdFechaNac,
-                            bdGenero,
-                            bdClave,
-                            bdNombreEst,
-                            bdRFC,
-                            bdHoraInicio,
-                            bdHoraFin,
-                            String.valueOf(bdPrecio),
-                            bdCalle,
-                            bdNumExt,
-                            bdColonia,
-                            bdCodigoPostal,
-                            bdCiudad,
-                            bdEstado);
+                    try {
+                        RegistroUsuario(Constantes.Dueños);
+                    } catch (JSONException e) {
 
+                    }
 
-                    Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
                 else{
                     genToast("Es necesario llenar todos los campos");
@@ -387,6 +368,97 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+    }
+
+    private void RegistroUsuario(String userType) throws JSONException {
+        String url = "";
+        switch (userType){
+            case "clientes":
+                url = "http://192.168.0.17:8080/base/wipRegistroCliente.php";
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Intent intent=new Intent(getApplicationContext(),Saludo.class);
+                                startActivity(intent);
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        genToast("Error al registrar en la base de datos: \n"+error.getMessage());
+                    }
+                }) {
+                    //adding parameters to the request
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("TipoUsuario", bdTipoUsuario);
+                        params.put("Usuario", bdUsuario);
+                        params.put("Contrasena",bdContrasena);
+                        params.put("Email",bdCorreo);
+                        params.put("Nombres",bdNombres);
+                        params.put("ApPaterno",bdApPaterno);
+                        params.put("ApMaterno",bdApMaterno);
+                        params.put("Genero",bdGenero);
+                        params.put("FechaNac",bdFechaNac);
+                        params.put("Matricula",bdMatricula);
+                        params.put("TipoCuenta",bdTipoCliente);
+                        return params;
+                    }
+                };
+
+                rq.add(stringRequest);
+                break;
+            case "duenos":
+                url = "http://192.168.0.17:8080/base/wipRegistroDueno.php";
+                StringRequest stringRequestDueno = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
+                                startActivity(intent);
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        genToast("Error al registrar en la base de datos: \n"+error.getMessage());
+                    }
+                }) {
+                    //adding parameters to the request
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("TipoUsuario", bdTipoUsuario);
+                        params.put("Usuario", bdUsuario);
+                        params.put("Contrasena",bdContrasena);
+                        params.put("Email",bdCorreo);
+                        params.put("Nombres",bdNombres);
+                        params.put("ApPaterno",bdApPaterno);
+                        params.put("ApMaterno",bdApMaterno);
+                        params.put("Genero",bdGenero);
+                        params.put("FechaNac",bdFechaNac);
+                        params.put("RFC",bdRFC);
+                        params.put("NombreEst",bdNombreEst);
+                        params.put("Calle",bdCalle);
+                        params.put("NumExt",bdNumExt);
+                        params.put("Colonia",bdColonia);
+                        params.put("CodigoPostal",bdCodigoPostal);
+                        params.put("Ciudad",bdCiudad);
+                        params.put("Estado",bdEstado);
+                        params.put("HoraInicio",bdHoraInicio);
+                        params.put("HoraFin",bdHoraFin);
+                        params.put("PrecioServicio",String.valueOf(bdPrecio));
+                        params.put("LugaresDisp",bdLugaresDisp);
+                        params.put("Clave",bdClave);
+                        return params;
+                    }
+                };
+
+                rq.add(stringRequestDueno);
+                break;
+        }
     }
 
 
@@ -436,4 +508,6 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
             case 4:tabHost.setCurrentTabByTag("Tab Four");break;
         }
     }
+
+
 }

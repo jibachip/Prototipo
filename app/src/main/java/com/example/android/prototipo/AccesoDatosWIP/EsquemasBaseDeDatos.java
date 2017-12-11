@@ -4,7 +4,7 @@ package com.example.android.prototipo.AccesoDatosWIP;
 
 public class EsquemasBaseDeDatos {
 
-    public class Usuarios{
+    public static class Usuarios {
         private int idUsuario;
         private String tipoUsuario;
         private String usuario;
@@ -15,6 +15,10 @@ public class EsquemasBaseDeDatos {
         private String apMaterno;
         private String genero;
         private String fechaNac;
+
+        public Usuarios(){
+
+        }
 
         public Usuarios(int idUsuario, String tipoUsuario, String usuario,
                         String contrasena, String email, String nombres,

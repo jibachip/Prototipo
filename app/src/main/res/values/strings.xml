@@ -1,23 +1,42 @@
 <resources>
-    <string name="app_name">Prototipo</string>
+    <string name="app_name">WIP</string>
     <string-array name="HORARIO_MAÑANA">
-        <item>9 A.M.</item>
-        <item>10 A.M.</item>
-        <item>11 A.M.</item>
-        <item>12 P.M.</item>
+        <item>08:00 A.M.</item>
+        <item>09:00 A.M.</item>
+        <item>10:00 A.M.</item>
+        <item>11:00 A.M.</item>
+        <item>12:00 P.M.</item>
+        <item>13:00 A.M.</item>
+        <item>14:00 A.M.</item>
+        <item>15:00 A.M.</item>
+        <item>16:00 P.M.</item>
+        <item>17:00 A.M.</item>
+        <item>18:00 A.M.</item>
+        <item>19:00 A.M.</item>
+        <item>20:00 P.M.</item>
+        <item>21:00 A.M.</item>
+        <item>22:00 A.M.</item>
+        <item>23:00 A.M.</item>
+        <item>00:00 P.M.</item>
     </string-array>
     <string-array name="HORARIO_TARDE">
-        <item>1 P.M.</item>
-        <item>2 P.M.</item>
-        <item>3 P.M.</item>
-        <item>4 P.M.</item>
-        <item>5 P.M.</item>
-        <item>6 P.M.</item>
-        <item>7 P.M.</item>
-        <item>8 P.M.</item>
-        <item>9 P.M.</item>
-        <item>10 P.M.</item>
-        <item>11 P.M.</item>
+        <item>08:00 A.M.</item>
+        <item>09:00 A.M.</item>
+        <item>10:00 A.M.</item>
+        <item>11:00 A.M.</item>
+        <item>12:00 P.M.</item>
+        <item>13:00 A.M.</item>
+        <item>14:00 A.M.</item>
+        <item>15:00 A.M.</item>
+        <item>16:00 P.M.</item>
+        <item>17:00 A.M.</item>
+        <item>18:00 A.M.</item>
+        <item>19:00 A.M.</item>
+        <item>20:00 P.M.</item>
+        <item>21:00 A.M.</item>
+        <item>22:00 A.M.</item>
+        <item>23:00 A.M.</item>
+        <item>00:00 P.M.</item>
     </string-array>
     <string name="title_activity_maps" translatable="false">Map</string>
 
