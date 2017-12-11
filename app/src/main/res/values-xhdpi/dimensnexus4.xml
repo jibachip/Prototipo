@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+    Dimens para los botones de toda la app
+    -->
+    <dimen name="botonancho">150dp</dimen>
+    <dimen name="botonalto">40dp</dimen>
+    <dimen name="botonmargen">20dp</dimen>
+
+    <!--
+  Dimens para los editText de toda la app
+  -->
+    <dimen name="editancho">150dp</dimen>
+    <dimen name="editalto">40dp</dimen>
+    <dimen name="editmargen">20dp</dimen>
+
+
+    <!--
+   Dimens para los textview de toda la app
+   -->
+    <dimen name="txtancho">30dp</dimen>
+    <dimen name="txtalto">30dp</dimen>
+    <dimen name="txtmargen">20dp</dimen>
+
+
+    <!--
+   Dimens para la imagen principal de toda la app
+   -->
+    <dimen name="imgancho">30dp</dimen>
+    <dimen name="imgalto">30dp</dimen>
+    <dimen name="imgmargen">30dp</dimen>
+
+
+</resources>

@@ -608,16 +608,17 @@
                             app:layout_constraintTop_toBottomOf="@id/tvPrecio" />
 
                         <EditText
-                            android:id="@+id/etLugares"
+                            android:id="@+id/etPrecioFracc"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/redondeado_gris"
+                            android:drawableLeft="@drawable/ic_attach_money_black_24dp"
                             android:drawablePadding="20dp"
-                            android:hint="Lugares disponibles"
-                            android:inputType="number"
+                            android:hint="Precio por fraccion"
+                            android:inputType="numberDecimal"
                             android:paddingStart="10dp"
                             android:textColorHint="#8d8d8d"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -635,7 +636,7 @@
                             android:drawableRight="@drawable/ic_navigate_next_black_24dp"
                             android:text="@string/regS"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/etLugares" />
+                            app:layout_constraintTop_toBottomOf="@+id/etPrecioFracc" />
 
                     </android.support.constraint.ConstraintLayout>
 
