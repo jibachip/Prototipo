@@ -3,7 +3,15 @@ package com.example.android.prototipo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,8 +21,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback {
+import org.json.JSONObject;
 
+public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback,Response.Listener<JSONObject>,Response.ErrorListener {
+
+
+
+    RequestQueue rq;
+    JsonRequest jrq;
     private GoogleMap mMap;
     static String estac = "No ha seleccionado un estacionamiento";
     static String direc = "No ha seleccionado un estacionamiento";
@@ -31,9 +45,17 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
+        rq= Volley.newRequestQueue(getApplicationContext());
+
         mapFragment.getMapAsync(this);
     }
 
+    private void cargaUbicaciones(){
+        String url = "http://192.168.0.17:8080/base/wipInicio.php";
+        jrq=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        rq.add(jrq);
+    }
 
 
     @Override
@@ -92,5 +114,15 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                 return false;
             }
         });
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getApplicationContext(),"Error al cargar las ubicaciones",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+
     }
 }

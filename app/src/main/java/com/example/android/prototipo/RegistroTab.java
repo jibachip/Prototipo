@@ -382,6 +382,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                                 Intent intent=new Intent(getApplicationContext(),Saludo.class);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                                finish();
                             }
                         }, new Response.ErrorListener() {
                     @Override
@@ -419,6 +420,7 @@ public class RegistroTab extends AppCompatActivity implements View.OnClickListen
                                 Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                                finish();
                             }
                         }, new Response.ErrorListener() {
                     @Override

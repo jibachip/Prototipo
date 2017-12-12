@@ -1,5 +1,6 @@
 package com.example.android.prototipo;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,13 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -14,12 +22,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    SharedPreferences prec;
     private GoogleMap mMap;
     LatLng ubi;
     double lat = 0,lon = 0;
+    RequestQueue rq;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +41,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        prec=getSharedPreferences("Datos cuenta",MODE_PRIVATE);
-        String s =prec.getString("Usuario","User");
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
 
+
+        rq= Volley.newRequestQueue(getApplicationContext());
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MapsActivity.this,"Locación guardada",Toast.LENGTH_LONG).show();
-
-                finish();
+                registroUbicacion();
             }
         });
     }
@@ -62,4 +71,45 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
     }
+
+
+    private void registroUbicacion(){
+
+        String url = "http://192.168.0.17:8080/base/wipRegistroUbicacion.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if(response.contains("true")){
+                            Intent intent=new Intent(getApplicationContext(),MainDuenos.class);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            finish();
+                        }else{
+                            genToast("Error al registrar en la base de datos");
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                genToast("Error al registrar en la base de datos: \n"+error.getMessage());
+            }
+        }) {
+            //adding parameters to the request
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Ubicacion","Nuevo");
+                params.put("Latitud", String.valueOf(lat) );
+                params.put("Longitud", String.valueOf(lon));
+                return params;
+            }
+        };
+        rq.add(stringRequest);
+    }
+
+    public void genToast(String mensaje){
+        Toast.makeText(getApplicationContext(),mensaje,Toast.LENGTH_SHORT).show();
+    }
+
 }

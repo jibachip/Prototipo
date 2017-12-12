@@ -20,7 +20,7 @@ import java.util.Date;
 
 public class MainDuenos extends AppCompatActivity {
     String cadena,registro;
-    TextView tvPat,tvMat,tvHora;
+    TextView tvCliente,tvEstacionamiento,tvHora;
     SQLiteDatabase db;
     SQLHelper sqlHelper;
     Clientes clientes;
@@ -32,12 +32,10 @@ public class MainDuenos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_duenos);
-        //estable solo la pantalla en modo vertical
-        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
-        tvPat=findViewById(R.id.tvPat);
-        tvMat=findViewById(R.id.tvMat);
+        tvCliente=findViewById(R.id.tvCliente);
+        tvEstacionamiento=findViewById(R.id.tvEstacionamiento);
         tvHora=findViewById(R.id.tvHora);
         Button btnScan=findViewById(R.id.btnScan);
         Button btnCons=findViewById(R.id.btnCons);
@@ -77,8 +75,8 @@ public class MainDuenos extends AppCompatActivity {
             } else {
                 cadena = intentResult.getContents();
                 String[] cad = cadena.split(",");
-                tvPat.setText("idCliente: "+cad[0]);
-                tvMat.setText("idEstacionamiento: "+cad[1]);
+                tvCliente.setText("idCliente: "+cad[0]);
+                tvEstacionamiento.setText("idEstacionamiento: "+cad[1]);
                 tvHora.setText("Hora de entrada: "+cad[2]);
 
                 switch (registro){
@@ -105,8 +103,8 @@ public class MainDuenos extends AppCompatActivity {
     private void insertarbd(){
         ContentValues values=new ContentValues();
         db=sqlHelper.getWritableDatabase(); //asignamos la BD a db en modo escritura
-        values.put("idClave",tvPat.getText().toString());
-        values.put("idEstacionamiento",tvMat.getText().toString());
+        values.put("idClave",tvCliente.getText().toString());
+        values.put("idEstacionamiento",tvEstacionamiento.getText().toString());
         values.put("hora",tvHora.getText().toString());
         db.insert("estacionamiento",null,values);
         db.close();

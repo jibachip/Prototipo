@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.prototipo.MainDuenos">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.normagarcia.qr2.QR2">
 
         <ImageView
             android:id="@+id/imageView"
@@ -20,8 +16,8 @@
             app:srcCompat="@drawable/backforms" />
 
         <TextView
-            android:id="@+id/tvPat"
-            android:text="idCliente: "
+            android:id="@+id/tvCliente"
+            android:text="Cliente: "
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginBottom="20dp"
@@ -39,7 +35,7 @@
             app:layout_constraintVertical_bias="0.09" />
 
         <TextView
-            android:id="@+id/tvMat"
+            android:id="@+id/tvEstacionamiento"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginBottom="20dp"
@@ -49,11 +45,11 @@
             android:background="@drawable/redondeado_amarillo"
             android:paddingStart="20dp"
             android:paddingTop="5dp"
-            android:text="idEstacionamiento: "
+            android:text="Estacionamiento: "
             app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPat" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCliente" />
 
         <TextView
             android:id="@+id/tvHora"
@@ -69,7 +65,7 @@
             android:text="Hora de entrada: 00:00"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMat" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEstacionamiento" />
 
         <Button
             android:id="@+id/btnScan"
@@ -101,5 +97,4 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnScan"
             app:layout_constraintVertical_bias="0.0" />
-    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
